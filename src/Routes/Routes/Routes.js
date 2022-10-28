@@ -15,26 +15,29 @@ export const routes = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Home></Home>
+                element: <Home></Home>,
+                loader: () => fetch('https://learn-tech-edge-server.vercel.app/courses')
             },
             {
                 path: '/course-category/:id',
-                element: <Category></Category>
+                element: <Category></Category>,
+                loader: ({ params }) => fetch(`https://learn-tech-edge-server.vercel.app/course-category/${params.id}`)
             },
             {
                 path: '/course/:id',
-                element: <Course></Course>
+                element: <Course></Course>,
+                loader: ({ params }) => fetch(`https://learn-tech-edge-server.vercel.app/course/${params.id}`)
             },
             {
-                path:'/faq',
+                path: '/faq',
                 element: <Faq></Faq>
             },
             {
-                path:'/blog',
+                path: '/blog',
                 element: <Blog></Blog>
             },
             {
-                path:'/login',
+                path: '/login',
                 element: <Login></Login>
             },
             {
