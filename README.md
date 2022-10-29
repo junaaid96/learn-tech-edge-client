@@ -1,3 +1,22 @@
+# b610-learning-platform-client-side-junaaid96
+# Name: LearnTechEdge
+* Website: https://learn-tech-edge.web.app/
+
+# Features
+* Minimalistic UI/UX.
+* Get access from anywhere.
+* You can login from Google and Github.
+* Courses have been categorized.
+* Made Responsive for Mobile and Tablet.
+
+# Technology Used
+* JavaScript
+* React/React-Router
+* React-Bootstrap
+* Firebase
+* NodeJS/ExpressJS
+* Vercel
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
