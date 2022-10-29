@@ -77,7 +77,7 @@ const Header = () => {
                                     className="text-decoration-none mx-2 my-auto text-dark fw-bold"
                                     to="/registration"
                                 >
-                                    Register
+                                    Registration
                                 </NavLink>
                             </>
                         )}

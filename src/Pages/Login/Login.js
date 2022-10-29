@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
 import { FaGithub } from 'react-icons/fa';
 import { AuthContext } from '../../Contexts/AuthProvider';
@@ -79,6 +79,7 @@ const Login = () => {
 
     return (
         <Form onSubmit={handleSubmit}>
+            <h1 className='mb-5'>Login</h1>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control name="email" type="email" placeholder="Enter email" required />
@@ -90,9 +91,10 @@ const Login = () => {
                 <Form.Control name="password" type="password" placeholder="Password" required />
             </Form.Group>
 
-            <Button variant="primary" type="submit">
+            <Button variant="dark" type="submit">
                 Login
             </Button>
+            <p className='my-3'>New here? Go to <Link to="/registration" className='text-decoration-none fw-bold text-dark'>Registration</Link></p>
             <Form.Text className="text-danger">
                 <p className='text-red-600'>{validate}</p>
             </Form.Text>

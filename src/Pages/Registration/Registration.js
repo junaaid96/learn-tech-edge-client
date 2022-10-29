@@ -1,9 +1,10 @@
 import React, { useContext, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider';
 
-const Register = () => {
+const Registration = () => {
     const [error, setError] = useState('');
     const { createUser, updateUserProfile } = useContext(AuthContext);
 
@@ -42,7 +43,8 @@ const Register = () => {
 
     return (
         <Form onSubmit={handleSubmit}>
-            <Form.Group className="mb-3" controlId="formFillName">
+            <h1 className='mb-5'>Registration</h1>
+            <Form.Group className="mb-3" controlId="formFullName">
                 <Form.Label>Full Name</Form.Label>
                 <Form.Control name="name" type="text" placeholder="Full Name" />
             </Form.Group>
@@ -60,9 +62,10 @@ const Register = () => {
                 <Form.Label>Password</Form.Label>
                 <Form.Control name="password" type="password" placeholder="Password" required />
             </Form.Group>
-            <Button variant="primary" type="submit">
+            <Button variant="dark" type="submit">
                 Register
             </Button>
+            <p className='my-3'>Already have an account? Please, <Link to="/login" className='text-decoration-none fw-bold text-dark'>Login</Link></p>
             <Form.Text className="text-danger">
                 {error}
             </Form.Text>
@@ -70,4 +73,4 @@ const Register = () => {
     );
 };
 
-export default Register;
+export default Registration;
