@@ -32,7 +32,7 @@ const Header = () => {
 
     return (
         <Navbar expand="lg" className="header shadow">
-            <Container>
+            <Container className="gap-3">
                 <Navbar.Brand>
                     <Link to="/" className="text-decoration-none text-dark fw-bold">
                         <Image src="logo.png" height={40}></Image>LearnTechEdge
@@ -40,7 +40,7 @@ const Header = () => {
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="m-auto me-2">
+                    <Nav className="m-auto me-1 gap-3">
                         <NavLink
                             className="text-decoration-none mx-2 my-auto text-dark fw-bold"
                             to="/"
@@ -91,7 +91,7 @@ const Header = () => {
                                 }
                             >
                                 <Image
-                                    style={{ height: "30px" }}
+                                    style={{ height: "2rem", width:"2rem" }}
                                     roundedCircle
                                     src={user?.photoURL}
                                     className="my-auto mx-2"

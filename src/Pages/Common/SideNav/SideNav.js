@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const LeftSideNav = () => {
+const SideNav = () => {
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
@@ -24,4 +24,4 @@ const LeftSideNav = () => {
     );
 };
 
-export default LeftSideNav;
+export default SideNav;
