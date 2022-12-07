@@ -3,11 +3,9 @@
 * Website: https://learn-tech-edge.web.app/
 
 # Features
-* Minimalistic UI/UX.
-* Get access from anywhere.
-* You can login from Google and Github.
+* PDF can be generated.
 * Courses have been categorized.
-* Made Responsive for Mobile and Tablet.
+* Dark mode implemented.
 
 # Technology Used
 * JavaScript
