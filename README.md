@@ -2,7 +2,7 @@
 # Name: LearnTechEdge
 * Website: https://learn-tech-edge.web.app/
 
-# Features
+# Functionalities
 * PDF can be generated.
 * Courses have been categorized.
 * Dark mode implemented.
