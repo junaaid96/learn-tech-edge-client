@@ -14,7 +14,7 @@ const Main = () => {
             <Header></Header>
             <Container fluid>
                 <Row className="h-100vh">
-                    <Col lg="2" className={`${theme}`}>
+                    <Col lg="2" className={`${theme} border-end`}>
                         <SideNav></SideNav>
                     </Col>
                     <Col lg="10" className={`p-5 ${theme}`}>

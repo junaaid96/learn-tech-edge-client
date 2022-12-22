@@ -59,7 +59,7 @@ const Header = () => {
                         {user?.email ? (
                             <>
                                 <Button
-                                    variant="dark"
+                                    variant="secondary"
                                     onClick={handleLogOut}
                                     size="sm"
                                 >
@@ -103,9 +103,9 @@ const Header = () => {
                         )}
                         <Button variant="transparent" onClick={toggleTheme}>
                             {theme === "text-dark bg-light" ? (
-                                <HiOutlineLightBulb />
+                                <HiOutlineLightBulb size={25}/>
                             ) : (
-                                <HiLightBulb />
+                                <HiLightBulb size={25}/>
                             )}
                         </Button>
                     </Nav>
