@@ -64,7 +64,7 @@ export const routes = createBrowserRouter([
         ],
     },
     {
-        path: '*',
+        path: '/*',
         element: <div className="text-center">
             <h1>404</h1>
             <h3>Not Found!</h3>

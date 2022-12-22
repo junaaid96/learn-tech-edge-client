@@ -21,7 +21,6 @@ const Header = () => {
 
     const handleTheme = (event) => {
         setTheme(!theme)
-
     }
 
     const handleLogOut = () => {
