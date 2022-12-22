@@ -9,7 +9,6 @@ import Button from "react-bootstrap/Button";
 import { AuthContext } from "../../../Contexts/AuthProvider";
 import Tooltip from "react-bootstrap/Tooltip";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
-import "./Header.css";
 import { ThemeContext } from "../../../Contexts/Theme";
 import { HiOutlineLightBulb, HiLightBulb } from "react-icons/hi";
 
@@ -25,12 +24,16 @@ const Header = () => {
     };
 
     return (
-        <Navbar expand="lg" className="header shadow">
+        <Navbar expand="lg" className={`shadow ${theme}`}>
             <Container className="gap-3">
                 <Navbar.Brand>
                     <Link
                         to="/"
-                        className="text-decoration-none text-dark fw-bold"
+                        className={`text-decoration-none fw-bold ${
+                            theme === "text-dark bg-light"
+                                ? "text-dark"
+                                : "text-light"
+                        }`}
                     >
                         <Image src="logo.png" height={40}></Image>LearnTechEdge
                     </Link>
@@ -39,19 +42,31 @@ const Header = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="m-auto me-1 gap-3">
                         <NavLink
-                            className="text-decoration-none mx-2 my-auto text-dark fw-bold"
+                            className={`text-decoration-none mx-2 my-auto fw-bold ${
+                                theme === "text-dark bg-light"
+                                    ? "text-dark"
+                                    : "text-light"
+                            }`}
                             to="/"
                         >
                             Courses
                         </NavLink>
                         <NavLink
-                            className="text-decoration-none mx-2 my-auto text-dark fw-bold"
+                            className={`text-decoration-none mx-2 my-auto fw-bold ${
+                                theme === "text-dark bg-light"
+                                    ? "text-dark"
+                                    : "text-light"
+                            }`}
                             to="/faq"
                         >
                             FAQ
                         </NavLink>
                         <NavLink
-                            className="text-decoration-none mx-2 my-auto text-dark fw-bold"
+                            className={`text-decoration-none mx-2 my-auto fw-bold ${
+                                theme === "text-dark bg-light"
+                                    ? "text-dark"
+                                    : "text-light"
+                            }`}
                             to="/blog"
                         >
                             Blog
@@ -69,13 +84,21 @@ const Header = () => {
                         ) : (
                             <>
                                 <NavLink
-                                    className="text-decoration-none mx-2 my-auto text-dark fw-bold"
+                                    className={`text-decoration-none mx-2 my-auto fw-bold ${
+                                        theme === "text-dark bg-light"
+                                            ? "text-dark"
+                                            : "text-light"
+                                    }`}
                                     to="/login"
                                 >
                                     Login
                                 </NavLink>
                                 <NavLink
-                                    className="text-decoration-none mx-2 my-auto text-dark fw-bold"
+                                    className={`text-decoration-none mx-2 my-auto fw-bold ${
+                                        theme === "text-dark bg-light"
+                                            ? "text-dark"
+                                            : "text-light"
+                                    }`}
                                     to="/registration"
                                 >
                                     Registration
@@ -103,9 +126,23 @@ const Header = () => {
                         )}
                         <Button variant="transparent" onClick={toggleTheme}>
                             {theme === "text-dark bg-light" ? (
-                                <HiOutlineLightBulb size={25}/>
+                                <HiOutlineLightBulb
+                                    size={25}
+                                    className={`${
+                                        theme === "text-dark bg-light"
+                                            ? "text-dark"
+                                            : "text-light"
+                                    }`}
+                                />
                             ) : (
-                                <HiLightBulb size={25}/>
+                                <HiLightBulb
+                                    size={25}
+                                    className={`${
+                                        theme === "text-dark bg-light"
+                                            ? "text-dark"
+                                            : "text-light"
+                                    }`}
+                                />
                             )}
                         </Button>
                     </Nav>
