@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import Form from 'react-bootstrap/Form';
 import { Link, NavLink } from "react-router-dom";
 import Image from "react-bootstrap/Image";
 import { FaUser } from "react-icons/fa";
@@ -10,22 +9,18 @@ import Button from "react-bootstrap/Button";
 import { AuthContext } from "../../../Contexts/AuthProvider";
 import Tooltip from "react-bootstrap/Tooltip";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
-import { useState } from "react";
-import './Header.css';
+import "./Header.css";
+import { ThemeContext } from "../../../Contexts/Theme";
+import { HiOutlineLightBulb, HiLightBulb } from "react-icons/hi";
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
     console.log(user);
-
-    const [theme, setTheme] = useState(false);
-
-    const handleTheme = (event) => {
-        setTheme(!theme)
-    }
+    const { theme, toggleTheme } = useContext(ThemeContext);
 
     const handleLogOut = () => {
         logOut()
-            .then(() => { })
+            .then(() => {})
             .catch((error) => console.error(error));
     };
 
@@ -33,7 +28,10 @@ const Header = () => {
         <Navbar expand="lg" className="header shadow">
             <Container className="gap-3">
                 <Navbar.Brand>
-                    <Link to="/" className="text-decoration-none text-dark fw-bold">
+                    <Link
+                        to="/"
+                        className="text-decoration-none text-dark fw-bold"
+                    >
                         <Image src="logo.png" height={40}></Image>LearnTechEdge
                     </Link>
                 </Navbar.Brand>
@@ -60,7 +58,11 @@ const Header = () => {
                         </NavLink>
                         {user?.email ? (
                             <>
-                                <Button variant="dark" onClick={handleLogOut} size="sm">
+                                <Button
+                                    variant="dark"
+                                    onClick={handleLogOut}
+                                    size="sm"
+                                >
                                     Log out
                                 </Button>
                             </>
@@ -90,7 +92,7 @@ const Header = () => {
                                 }
                             >
                                 <Image
-                                    style={{ height: "2rem", width:"2rem" }}
+                                    style={{ height: "2rem", width: "2rem" }}
                                     roundedCircle
                                     src={user?.photoURL}
                                     className="my-auto mx-2"
@@ -99,15 +101,13 @@ const Header = () => {
                         ) : (
                             <FaUser className="my-auto mx-2"></FaUser>
                         )}
-                        <Form className="my-auto mx-2">
-                            <Form.Check
-                                type="switch"
-                                id="custom-switch"
-                                label={theme ? 'Dark' : 'Light'}
-                                checked={theme}
-                                onChange={handleTheme}
-                            />
-                        </Form>
+                        <Button variant="transparent" onClick={toggleTheme}>
+                            {theme === "text-dark bg-light" ? (
+                                <HiOutlineLightBulb />
+                            ) : (
+                                <HiLightBulb />
+                            )}
+                        </Button>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
