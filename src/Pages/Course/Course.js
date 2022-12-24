@@ -67,7 +67,7 @@ const CourseDetails = () => {
                         {({ toPdf }) => (
                             <Button
                                 variant="secondary"
-                                className="mt-5 w-25"
+                                className="mt-5"
                                 onClick={toPdf}
                             >
                                 Generate Pdf
